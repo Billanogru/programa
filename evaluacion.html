@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calificación de defensa</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script></head>
+<body class="evaluacion">
+<div class="encab"><span>👨‍💻 Creado por <b>JHEYMBER LIMBER ORIHUELA CRUZ</b></span>
+<span class="contacto"><a class="c-llamar" href="tel:+59168662851">📞 Llamar</a><a class="c-wa" href="https://wa.me/59168662851?text=Hola%2C%20te%20escribo%20desde%20el%20sistema%20de%20evaluaci%C3%B3n" target="_blank" rel="noopener">💬 WhatsApp</a><a class="c-sms" href="sms:+59168662851">✉️ Mensaje</a></span></div>
+<header class="barra"><div><a class="volver" href="index.html">&lt; inicio</a> <strong id="saludo-barra"></strong></div>
+<div class="acciones"><button id="btn-min" class="sec">🗕 Minimizar</button><button id="btn-imprimir" class="sec">🖨️ Imprimir</button><button id="btn-pdf" class="btn">⬇️ Descargar PDF</button></div></header>
+
+<section id="mini" class="mini caja" hidden>
+<p class="chico">🗕 Evaluación minimizada (tus datos siguen guardados)</p>
+<h2 id="mini-est"></h2><p id="mini-proy" class="chico"></p>
+<div class="big"><span id="mini-total">0</span><small> / 100 pts</small></div>
+<button id="btn-expandir" class="btn">⬆️ Expandir</button>
+</section>
+
+<main class="panel">
+<section class="caja"><h2><span>01</span> Datos de la defensa</h2>
+<div class="datos">
+<label>Estudiante<input id="est" placeholder="Nombre del estudiante" autocomplete="off"></label>
+<label>Título del proyecto<input id="proy" placeholder="Título del proyecto" autocomplete="off"></label>
+<label>Cantidad de jurados<select id="nj"><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+</div>
+<div id="jurados" class="jur"></div></section>
+<section><h2><span>02</span> Ingresa los puntos (cada aspecto tiene su máximo)</h2><div id="tarjetas" class="tarjetas"></div></section>
+<section class="caja"><h2><span>03</span> Marcador</h2>
+<div class="m"><div class="pp">Práctico <b id="rp"></b></div><div class="pt">Teórico <b id="rt"></b></div></div>
+<div class="final"><span id="medalla" class="medalla"></span><div class="big"><span id="total">0</span><small> / 100 pts</small></div><p id="frase"></p></div>
+<p id="aviso" class="aviso" hidden></p>
+<div class="acciones"><button id="revelar" class="btn">🎉 Revelar nota</button><button id="guardar" class="sec">⭐ Guardar en el ranking</button><button id="nuevo" class="sec">➕ Nuevo estudiante</button></div>
+<p id="msg" class="msg" role="status"></p></section>
+<section class="caja"><h2>🏅 Ranking e historial</h2><p class="chico">Cada estudiante guardado conserva su documento: toca 📄 para verlo, imprimirlo o descargarlo en PDF cuando quieras.</p><ol id="lista" class="rank"></ol><p id="vacio" class="chico">Aún no hay estudiantes guardados.</p></section>
+</main>
+<h2 class="prev"><span>04</span> Vista previa del PDF</h2>
+<section id="hoja" class="hoja"></section>
+
+<footer class="pie">
+<p>Sistema de evaluación · Creado por <b>JHEYMBER LIMBER ORIHUELA CRUZ</b></p>
+<div class="contacto"><a class="c-llamar" href="tel:+59168662851">📞 Llamar 68662851</a><a class="c-wa" href="https://wa.me/59168662851?text=Hola%2C%20te%20escribo%20desde%20el%20sistema%20de%20evaluaci%C3%B3n" target="_blank" rel="noopener">💬 WhatsApp</a><a class="c-sms" href="sms:+59168662851">✉️ Mensaje</a></div>
+</footer>
+
+<div id="modal" class="modal" hidden><div class="modal-in">
+<div class="modal-bar"><strong id="modal-tit"></strong><span class="acciones"><button id="m-imp" class="sec">🖨️ Imprimir</button><button id="m-pdf" class="btn">⬇️ PDF</button><button id="m-cerrar" class="sec">✕ Cerrar</button></span></div>
+<section id="hoja-h" class="hoja"></section>
+</div></div>
+<canvas id="conf"></canvas>
+<script src="script.js"></script></body></html>
